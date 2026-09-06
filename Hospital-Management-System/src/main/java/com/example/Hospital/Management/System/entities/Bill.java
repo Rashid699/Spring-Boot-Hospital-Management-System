@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 
 @Entity
 @Getter
@@ -23,5 +24,11 @@ public class Bill extends BaseClass{
             scale = 2
     )
     private BigDecimal amount;
+
+    @Column(nullable = false, length = 30)
+    private String status;
+
+    @Column(nullable = false)
+    private LocalDate billDate;
 
 }
