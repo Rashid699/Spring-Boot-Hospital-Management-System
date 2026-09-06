@@ -1,38 +1,15 @@
 package com.example.Hospital.Management.System.entities;
 
-
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-
+import jakarta.persistence.*;
+import lombok.*;
 import java.time.LocalDateTime;
 
 @Entity
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
-public class Appointment extends BaseClass{
-
-    @Column(nullable = false)
-    private LocalDateTime appointmentDate;
-
-    @Column(nullable = false, length = 255)
-    private String reason;
-
-    @Column(nullable = false, length = 30)
-    private String status;
-
-    @ManyToOne
-    @JoinColumn(name = "doctor_id", nullable = false)
-    private Doctor doctor;
-
-    @ManyToOne
-    @JoinColumn(name = "patient_id", nullable = false)
-    private Patient patient;
+@Getter @Setter @NoArgsConstructor @AllArgsConstructor
+public class Appointment extends BaseClass {
+    @Column(nullable=false) private LocalDateTime appointmentDate;
+    @Column(nullable=false, length=255) private String reason;
+    @Column(nullable=false, length=30) private String status;
+    @ManyToOne(fetch=FetchType.LAZY) @JoinColumn(name="doctor_id", nullable=false) private Doctor doctor;
+    @ManyToOne(fetch=FetchType.LAZY) @JoinColumn(name="patient_id", nullable=false) private Patient patient;
 }

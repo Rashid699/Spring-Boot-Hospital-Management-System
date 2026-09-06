@@ -1,0 +1,1 @@
+package com.example.Hospital.Management.System.dtos; import jakarta.validation.constraints.*; import lombok.*; @Data @Builder @NoArgsConstructor @AllArgsConstructor public class DepartmentDTO {private Long id; @NotBlank @Size(max=100) private String name; @Size(max=255) private String description; @NotNull @Positive private Long hospitalId;}

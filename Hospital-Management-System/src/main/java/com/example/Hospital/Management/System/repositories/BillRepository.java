@@ -1,0 +1,1 @@
+package com.example.Hospital.Management.System.repositories; import com.example.Hospital.Management.System.entities.Bill; import org.springframework.data.jpa.repository.JpaRepository; import java.util.*; public interface BillRepository extends JpaRepository<Bill,Long>{List<Bill> findByIsActiveTrue(); List<Bill> findByStatusIgnoreCaseAndIsActiveTrue(String status);}

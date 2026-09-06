@@ -1,0 +1,1 @@
+package com.example.Hospital.Management.System.repositories; import com.example.Hospital.Management.System.entities.Department; import org.springframework.data.jpa.repository.JpaRepository; import java.util.*; public interface DepartmentRepository extends JpaRepository<Department,Long>{List<Department> findByIsActiveTrue(); long countByHospitalIdAndIsActiveTrue(Long id);}
