@@ -1,6 +1,7 @@
 package com.example.Hospital.Management.System.entities;
 
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -13,4 +14,9 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Department {
+
+    @Column(nullable = false, length = 100)
+    private String name;
+
+
 }
