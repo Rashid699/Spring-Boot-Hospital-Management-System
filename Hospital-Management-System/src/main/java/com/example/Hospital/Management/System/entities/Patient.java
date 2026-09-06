@@ -1,6 +1,7 @@
 package com.example.Hospital.Management.System.entities;
 
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -12,5 +13,8 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Patient {
+public class Patient extends BaseClass{
+
+    @Column(nullable = false, length = 100)
+    private String name;
 }
