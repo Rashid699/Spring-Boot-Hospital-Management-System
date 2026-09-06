@@ -1,0 +1,1 @@
+package com.example.Hospital.Management.System.dtos; import jakarta.validation.constraints.*; import lombok.*; @Data @Builder @NoArgsConstructor @AllArgsConstructor public class PrescriptionDTO {private Long id; @NotBlank private String medicineName; @NotBlank private String dosage; @NotNull @Positive private Integer durationDays; @NotNull @Positive private Long medicalRecordId;}

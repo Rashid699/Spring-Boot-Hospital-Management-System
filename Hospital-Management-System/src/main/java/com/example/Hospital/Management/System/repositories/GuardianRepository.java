@@ -1,0 +1,1 @@
+package com.example.Hospital.Management.System.repositories; import com.example.Hospital.Management.System.entities.Guardian; import org.springframework.data.jpa.repository.JpaRepository; import java.util.*; public interface GuardianRepository extends JpaRepository<Guardian,Long>{List<Guardian> findByIsActiveTrue(); List<Guardian> findByPatientIdAndIsActiveTrue(Long id);}

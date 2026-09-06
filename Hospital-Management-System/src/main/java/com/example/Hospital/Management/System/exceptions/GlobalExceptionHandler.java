@@ -1,0 +1,7 @@
+package com.example.Hospital.Management.System.exceptions;
+import org.springframework.http.*; import org.springframework.web.bind.MethodArgumentNotValidException; import org.springframework.web.bind.annotation.*; import java.time.LocalDateTime; import java.util.stream.Collectors;
+@RestControllerAdvice public class GlobalExceptionHandler {
+@ExceptionHandler(ResourceNotFoundException.class) public ResponseEntity<ErrorResponse> notFound(ResourceNotFoundException e){return ResponseEntity.status(404).body(new ErrorResponse(404,"Not Found",e.getMessage(),LocalDateTime.now()));}
+@ExceptionHandler(BusinessException.class) public ResponseEntity<ErrorResponse> business(BusinessException e){return ResponseEntity.badRequest().body(new ErrorResponse(400,"Bad Request",e.getMessage(),LocalDateTime.now()));}
+@ExceptionHandler(MethodArgumentNotValidException.class) public ResponseEntity<ErrorResponse> validation(MethodArgumentNotValidException e){String m=e.getBindingResult().getFieldErrors().stream().map(x->x.getField()+": "+x.getDefaultMessage()).collect(Collectors.joining(", "));return ResponseEntity.badRequest().body(new ErrorResponse(400,"Validation Failed",m,LocalDateTime.now()));}
+@ExceptionHandler(Exception.class) public ResponseEntity<ErrorResponse> generic(Exception e){return ResponseEntity.status(500).body(new ErrorResponse(500,"Internal Server Error",e.getMessage(),LocalDateTime.now()));}}

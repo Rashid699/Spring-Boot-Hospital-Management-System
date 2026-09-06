@@ -1,0 +1,1 @@
+package com.example.Hospital.Management.System.repositories; import com.example.Hospital.Management.System.entities.Hospital; import org.springframework.data.jpa.repository.JpaRepository; import java.util.*; public interface HospitalRepository extends JpaRepository<Hospital,Long>{List<Hospital> findByIsActiveTrue();}
