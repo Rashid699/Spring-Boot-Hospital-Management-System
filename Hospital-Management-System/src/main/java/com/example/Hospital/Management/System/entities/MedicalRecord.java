@@ -8,6 +8,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.LocalDate;
+
 @Entity
 @Getter
 @Setter
@@ -17,5 +19,11 @@ public class MedicalRecord {
 
     @Column(nullable = false, length = 255)
     private String diagnosis;
+
+    @Column(length = 1000)
+    private String notes;
+
+    @Column(nullable = false)
+    private LocalDate recordDate;
 
 }
