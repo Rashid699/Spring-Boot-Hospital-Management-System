@@ -3,6 +3,8 @@ package com.example.Hospital.Management.System.entities;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -22,5 +24,12 @@ public class Admission extends BaseClass{
 
     private LocalDate dischargeDate;
 
+    @ManyToOne
+    @JoinColumn(name = "patient_id")
+    private Patient patient;
+
+    @ManyToOne
+    @JoinColumn(name = "room_id")
+    private Room room;
 
 }
