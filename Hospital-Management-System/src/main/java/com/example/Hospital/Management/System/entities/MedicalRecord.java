@@ -16,7 +16,7 @@ import java.util.List;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class MedicalRecord {
+public class MedicalRecord extends BaseClass{
 
     @Column(nullable = false, length = 255)
     private String diagnosis;
