@@ -18,4 +18,7 @@ public class Hospital {
     @Column(nullable = false, length = 100)
     private String name;
 
+    @Column(nullable = false, length = 150)
+    private String location;
+
 }
