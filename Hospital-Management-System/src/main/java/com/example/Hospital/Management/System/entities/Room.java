@@ -26,4 +26,7 @@ public class Room extends BaseClass{
 
     @Column(nullable = false, length = 50)
     private String type;
+
+    @Column(nullable = false)
+    private Integer capacity;
 }
