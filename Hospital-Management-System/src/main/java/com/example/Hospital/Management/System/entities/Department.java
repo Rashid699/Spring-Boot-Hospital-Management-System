@@ -30,4 +30,7 @@ public class Department {
     @OneToMany(mappedBy = "department")
     private List<Doctor> doctors = new ArrayList<>();
 
+    @OneToMany(mappedBy = "department")
+    private List<Staff> staff = new ArrayList<>();
+
 }
