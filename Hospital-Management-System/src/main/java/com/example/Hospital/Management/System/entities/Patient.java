@@ -20,4 +20,7 @@ public class Patient extends BaseClass{
 
     @Column(nullable = false, length = 20)
     private String gender;
+
+    @Column(nullable = false, length = 20)
+    private String phoneNumber;
 }
