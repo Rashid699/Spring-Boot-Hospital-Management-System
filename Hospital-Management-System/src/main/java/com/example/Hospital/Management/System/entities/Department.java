@@ -15,7 +15,7 @@ import java.util.List;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Department {
+public class Department extends BaseClass{
 
     @Column(nullable = false, length = 100)
     private String name;
