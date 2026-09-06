@@ -28,9 +28,10 @@ public class Hospital {
     @OneToMany(mappedBy = "hospital")
     private List<Department> departments = new ArrayList<>();
 
-
     @OneToMany(mappedBy = "hospital")
     private List<Patient> patients = new ArrayList<>();
 
+    @OneToMany(mappedBy = "hospital")
+    private List<Room> rooms = new ArrayList<>();
 
 }
