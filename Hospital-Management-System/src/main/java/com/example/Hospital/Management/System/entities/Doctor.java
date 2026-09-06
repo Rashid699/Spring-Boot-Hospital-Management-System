@@ -24,5 +24,8 @@ public class Doctor {
     @Column(nullable = false, length = 20)
     private String phoneNumber;
 
+    @Column(nullable = false, length = 100)
+    private String specialization;
+
 
 }
