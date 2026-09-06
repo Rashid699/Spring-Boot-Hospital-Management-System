@@ -3,6 +3,8 @@ package com.example.Hospital.Management.System.entities;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -30,5 +32,9 @@ public class Bill extends BaseClass{
 
     @Column(nullable = false)
     private LocalDate billDate;
+
+    @ManyToOne
+    @JoinColumn(name = "patient_id")
+    private Patient patient;
 
 }
