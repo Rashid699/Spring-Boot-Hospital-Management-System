@@ -15,7 +15,7 @@ import java.util.List;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Doctor {
+public class Doctor extends BaseClass{
 
     @Column(nullable = false, length = 100)
     private String name;
