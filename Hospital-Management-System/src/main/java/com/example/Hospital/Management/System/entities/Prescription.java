@@ -21,4 +21,7 @@ public class Prescription extends BaseClass{
     @Column(nullable = false, length = 100)
     private String dosage;
 
+    @Column(nullable = false)
+    private Integer durationDays;
+
 }
