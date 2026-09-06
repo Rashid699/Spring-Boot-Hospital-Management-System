@@ -23,4 +23,7 @@ public class Patient extends BaseClass{
 
     @Column(nullable = false, length = 20)
     private String phoneNumber;
+
+    @Column(length = 10)
+    private String bloodGroup;
 }
