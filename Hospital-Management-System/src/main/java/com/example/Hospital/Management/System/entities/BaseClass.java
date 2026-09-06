@@ -24,10 +24,19 @@ public class BaseClass {
 
     private LocalDateTime updatedDate;
 
+    @PrePersist
+    public void prePersist() {
 
+        createdDate = LocalDateTime.now();
 
+        if (isActive == null) {
+            isActive = true;
+        }
+    }
 
+    @PreUpdate
+    public void preUpdate() {
 
-
-
+        updatedDate = LocalDateTime.now();
+    }
 }
