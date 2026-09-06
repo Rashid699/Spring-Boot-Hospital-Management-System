@@ -18,4 +18,7 @@ public class Prescription extends BaseClass{
     @Column(nullable = false, length = 120)
     private String medicineName;
 
+    @Column(nullable = false, length = 100)
+    private String dosage;
+
 }
