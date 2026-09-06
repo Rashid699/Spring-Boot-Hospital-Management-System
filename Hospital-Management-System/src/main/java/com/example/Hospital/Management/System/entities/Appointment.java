@@ -22,4 +22,7 @@ public class Appointment extends BaseClass{
 
     @Column(nullable = false, length = 255)
     private String reason;
+
+    @Column(nullable = false, length = 30)
+    private String status;
 }
